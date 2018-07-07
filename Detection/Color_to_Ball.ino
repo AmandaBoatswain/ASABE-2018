@@ -48,6 +48,8 @@ int green_frequency =0;
 
 int color = 0; 
 
+char color_char;
+
 /* --- Setup Code  --- */
 
 void setup() {
@@ -204,6 +206,7 @@ int readColor(number_of_reads) {
 
     color = 1; // Red
 
+    color_char = 'R'; // Added for compatibility with the BallPicker2 code
   }
 
  //else if(red_frequency<blue_frequency & green_frequency<blue_frequency & green_frequency < red_frequency){
@@ -211,21 +214,24 @@ int readColor(number_of_reads) {
 
     color = 2; // Green
 
+    color_char = 'G'; // Added for compatibility with the BallPicker2 code
   }
 
   else if(red_frequency > blue_frequency & green_frequency>blue_frequency){
 
     color = 3; // Blue
 
+    color_char = 'B'; // Added for compatibility with the BallPicker2 code
   } 
 
  else {
 
   color = 0;
 
+  color_char = 'N'; // Added for compatibility with the BallPicker2 code
  }
 
- return color;  
+ return color_char;  
 
 }
 
